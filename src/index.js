@@ -1,17 +1,6 @@
-const getResource = async (url) => {
-    const res = await fetch(url);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app';
 
-    if (!res.ok) {
-        throw new Error(`Could nor fetch ${url}, received ${res.status}`)
-    }
-    const body = await res.json();
-    return body;
-};
-
-getResource('https://swapi.co/api/people/999s/')
-    .then((body) => {
-        console.log(body);
-    })
-    .catch((err) => {
-        console.log('Could not fetch', err)
-    })
+ReactDOM.render(<App />,
+  document.getElementById('root'));
