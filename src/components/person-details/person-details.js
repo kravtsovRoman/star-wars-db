@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './person-details.css';
 import SwapiService from "../../services/swapi-service";
+import Spinner from "../spinner/spinner";
 
 export default class PersonDetails extends Component {
 
@@ -37,20 +38,20 @@ export default class PersonDetails extends Component {
   render() {
 
     if (!this.state.person) {
-      return <span>Select a person from a list</span>;
+      return <Spinner />;
     }
 
     const { id, name, gender,
-              birthYear, eyeColor } = this.state.person;
+      birthYear, eyeColor } = this.state.person;
 
     return (
       <div className="person-details card">
         <img className="person-image"
           src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
-          alt="character"/>
+          alt="character" />
 
         <div className="card-body">
-          <h4>{name} {this.props.personId}</h4>
+          <h4>{name}</h4>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               <span className="term">Gender</span>

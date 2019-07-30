@@ -11,7 +11,7 @@ export default class App extends Component {
 
   state = {
     showRandomPlanet: true,
-    selectedPerson: 5
+    selectedPerson: 1
   };
 
   toggleRandomPlanet = () => {
@@ -31,13 +31,13 @@ export default class App extends Component {
   render() {
 
     const planet = this.state.showRandomPlanet ?
-      <RandomPlanet/> :
+      <RandomPlanet /> :
       null;
 
     return (
       <div className="stardb-app">
         <Header />
-        { planet }
+        {planet}
 
         <button
           className="toggle-planet btn btn-warning btn-lg"
@@ -47,7 +47,7 @@ export default class App extends Component {
 
         <div className="row mb2">
           <div className="col-md-6">
-            <ItemList onItemSelected={this.onPersonSelected}/>
+            <ItemList onItemSelected={this.onPersonSelected} />
           </div>
           <div className="col-md-6">
             <PersonDetails personId={this.state.selectedPerson} />
