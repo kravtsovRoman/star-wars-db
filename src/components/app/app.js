@@ -20,7 +20,7 @@ export default class App extends Component {
   onServiceChange = () => {
     this.setState(({ swapiService }) => {
       const Service = swapiService instanceof SwapiService ?
-                        DummySwapiService : SwapiService;
+        DummySwapiService : SwapiService;
       return {
         swapiService: new Service()
       };
